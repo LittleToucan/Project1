@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tarkovhomestyle.css">
+</head>
+
+<body>
+    <!--creates an overlaying piece on body-->
+    <div class="overlay">
+
+        <div class="navcontainer">
+            <!--had a problem where the overlay would not readjust properly as size decreased solution was to put it into a div (treat each section as its own box)-->
+            <nav class="active" id="nav">
+                <ul>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Guides</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <button class="icon" id="toggle">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                </button>
+            </nav>
+            <!--Creates section for search bar-->
+            <div class="searchBarcontainer">
+                <ul>
+                    <li class="search-bar"><img src="search_icon.png" alt="magnifyingglass"></li>
+                    <li class="search-bar"><input type="text" placeholder="Search.."></li>
+                </ul>
+            </div>
+        </div><!--end of navcontainer-->
+
+        <!--Creates section for general guides-->
+        <div class="generalGuidescontainer">
+            <text class="topofgeneral">Learning the basics</text>
+            <ul>
+                <li><button class="map-pathing">Map Pathing Guide</button></li>
+                <li><button class="boss-combat">Boss Combat</button></li>
+                <li><button class="damage-mechanics">Damage Mechanics</button></li>
+                <li><button class="looting-efficieny-guide">Looting Efficieny Guide</button></li>
+            </ul>
+        </div><!--end of generalGuidescontainer-->
+
+        <div><text class="featuredcontainertext">FEATURED GUIDES</text></div>
+
+        <!--Creates section for feature1-->
+        <div class="feature1">
+            <p class="topoffeature1">Light tank</p>
+            <div class="feature1image">
+                <a href="focusedguide.html"><img src="Loadout1.jpg" alt="firstloadout"></a>
+            </div>
+            <div class="feature1ul">
+                <ul class="helpfulbuttons">
+                    <li><button class="primary"><img src="scarl.JPG"></button></li>
+                    <li><button class="secondary">Secondary</button></li>
+                    <li><button class="armor"><img src="thor.JPG"></button></li>
+                    <li><button class="helmet"><img src="zshblack+fs.JPG"></button></li>
+                    <li><button class="ammo"><img src="m855.JPG"></button></li>
+                </ul>
+            </div>
+        </div><!--end of featured1-->
+
+        <!--Creates section for feature2-->
+        <div class="feature2">
+            <p class="topoffeature2">Light Armor</p>
+            <div class="feature2image">
+                <a href="focusedguide.html"><img src="Loadout1.jpg" alt="firstloadout"></a>
+            </div>
+            <div class="feature2ul">
+                <ul class="helpfulbuttons">
+                    <li><button class="primary"><img src="scarl.JPG"></button></li>
+                    <li><button class="secondary">Secondary</button></li>
+                    <li><button class="armor"><img src="thor.JPG"></button></li>
+                    <li><button class="helmet"><img src="zshblack+fs.JPG"></button></li>
+                    <li><button class="ammo"><img src="m855.JPG"></button></li>
+                </ul>
+            </div>
+        </div><!--end of featured2-->
+
+        <div class="socialcontainer">
+            <!--Creates section for live user-->
+            <div class="liveusercontainer">
+                <header class="header">
+                    <h4 class="title">Live User Filter</h4>
+                    <small class="subtitle">Search by name and/or location</small>
+                    <input type="text" id="filter" placeholder="Search">
+                </header>
+
+                <ul id="result" class="user-list">
+                    <li>
+                        <h3>Loading...</h3>
+                    </li>
+                </ul>
+            </div>
+
+            <!--Creates section for slider-->
+            <div id="slider">
+                <figure>
+                    <!--make sure last image is first image because it wont stay on last for long so you shouldn't put an image you want to be apart of the slide as last-->
+                    <a href="https://twitter.com/?lang=en" alt=""><img src="GoofylookingbewilderedSOCIAL.PNG"></a>
+                    <a href="https://twitter.com/?lang=en" alt=""><img src="GoofylookingbewilderedSOCIAL.PNG"></a>
+                    <a href="https://twitter.com/?lang=en" alt=""><img src="GoofylookingbewilderedSOCIAL.PNG"></a>
+                    <a href="https://twitter.com/?lang=en" alt=""><img src="GoofylookingbewilderedSOCIAL.PNG"></a>
+                    <a href="https://twitter.com/?lang=en" alt=""><img src="GoofylookingbewilderedSOCIAL.PNG"></a>
+                </figure>
+            </div><!--end of slider-container-->
+        </div><!--end of socialcontainer-->
+
+        <!--Creates section for newsTable-->
+        <div class="newsTable">
+            <table>
+                <tr>
+                    <th class="updateTablehead"> Updates </th>
+                </tr>
+                <tr>
+                    <td class="updateTabledata"> <text>Patch 0.14.1.1 </text>
+                        <ul>
+                            <text>List of Changes:<br><br></text>
+                            <li>Reworked the damage through layers of armor: now when each layer is penetrated, the
+                                bullet loses some penetration power and damage depending on the
+                                characteristics of the penetrated armor
+                            </li>
+                            <li>
+                                Fixed an issue with missing blunt damage when hitting a ballistic plate
+                            </li>
+                            <a href="https://www.escapefromtarkov.com/news/id/282?lang=null">read more...</a>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="updateTabledata"><text>Patch 0.14.1.0 </text>
+                        <ul>
+                            List of changes:<br><br>
+                            <li>Reworked the damage through layers of armor: now when each layer is penetrated, the
+                                bullet loses some penetration power and damage depending on the
+                                characteristics of the penetrated armor
+                            </li>
+                            <li>
+                                Fixed an issue with missing blunt damage when hitting a ballistic plate
+                            </li>
+                            <a href="https://www.escapefromtarkov.com/news/id/280?lang=null">read more...</a>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="updateTabledata"><text>Patch 0.14.0.0 </text>
+                        <ul>
+                            New Content:<br><br>
+                            Ground Zero<br><br>
+                            The Ground Zero location, situated in the city center of Tarkov, has been added to the
+                            game.<br>
+                            <a href="https://www.escapefromtarkov.com/news/id/277?lang=null">read more...</a>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div><!--end of newsTable-->
+
+
+
+
+
+    </div><!--end of main overlay-->
+    <script src="https://kit.fontawesome.com/4ed811ead8.js" crossorigin="anonymous"></script>
+    <script src="tarkovhomescript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222222;
+}
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(23, 22, 22);
+    min-width: 400px;
+}
+
+.navcontainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    background-color: rgb(145, 126, 70);
+    margin: 20px;
+    padding: 10px;
+    width: 50px;
+    max-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: width 0.6s linear;
+}
+
+nav.active {
+    width: 350px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 0;
+    transition: width 0.6s linear;
+}
+
+nav.active ul {
+    width: 100%;
+}
+
+nav ul li {
+    transform: rotateY(0deg);
+    opacity: 0;
+    transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+nav ul a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.icon {
+    background-color: rgb(145, 126, 70);
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    height: 30px;
+    width: 40px;
+}
+
+.icon:focus {
+    outline: 0;
+}
+
+.icon .line {
+    background-color: rgb(23, 22, 22);
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transition: transform 0.6s linear;
+}
+
+.icon .line2 {
+    top: auto;
+    bottom: 10px;
+}
+
+nav.active .icon .line1 {
+    transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.active .icon .line2 {
+    transform: rotate(765deg) translateY(-5.5px);
+}
+
+/* was a  problem where translate didnt shift properly turns out I just needed to input negative value*/
+
+.searchBarcontainer {
+    display: flex;
+    min-width: 50px;
+    border-radius: 3px;
+}
+
+.searchBarcontainer ul {
+    display: flex;
+    flex-direction: wrap;
+    list-style-type: none;
+    margin: 20px;
+}
+
+.searchBarcontainer input[type=text] {
+    background-color: #917e46;
+    height: 41px;
+    border: none;
+}
+
+.searchBarcontainer input[type=text]:focus {
+    outline: none;
+}
+
+.generalGuidescontainer {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    border: black 5px solid;
+    margin-bottom: 60px;
+    border-radius: 4px;
+    margin: 25px;
+    background-color: #242424;
+}
+
+.topofgeneral {
+    color: #917e46;
+    font-size: 30px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+
+.generalGuidescontainer ul {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+}
+
+.generalGuidescontainer ul li button {
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 2px 1px #000000;
+    border: #000000 2px solid;
+    border-radius: 5px;
+    color: #917e46;
+    min-width: 150px;
+    min-height: 150px;
+    margin: 70px;
+    cursor: pointer;
+}
+
+.map-pathing {
+    background-image: url("Woods_Interactive_Map_Base.png");
+    opacity: 0.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.boss-combat {
+    background-image: url("Glukhar.jpg");
+    opacity: 0.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.boss-combat {
+    background-image: url("Glukhar.jpg");
+    opacity: 0.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.damage-mechanics {
+    background-image: url("Escape-From-Tarkov-Boost-Vitality-Skill.png");
+    opacity: 0.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.looting-efficieny-guide {
+    background-image: url("junkitems.jpg");
+    opacity: 0.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.featuredcontainertext {
+    font-size: 25px;
+    margin: 20px;
+    color: #917e46;
+    font-family: "PT Sans", sans-serif;
+}
+
+.topoffeature1 {
+    color: #917e46;
+    font-size: 30px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+/*
+    was a problem where the buttons wouldnt wrap when the display size changed I think what was missing is justify-content: space-around; this means that without a means to justify the content the content would simply flow outside of the flexbox
+
+.feature1 {
+    display: flex;
+    flex-direction: row;
+    border: black solid 2px;
+    background-color: #917e46;
+    margin:20px;
+}
+
+.feature1image img{
+    max-width:300px;
+    max-height:250px;
+    margin: 10px;
+    margin-right: 15px; 
+    border:solid white 3px;
+}
+
+.helpfulbuttons {
+    border:solid white 2px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row wrap;
+}
+
+.helpfulbuttons li button {
+    border:solid white 2px;
+    min-width:100px
+}
+*/
+
+.feature1 {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid black 5px;
+    background-color: #242424;
+    border-radius: 4px;
+    margin: 25px;
+}
+
+.feature1image img {
+    color: black;
+}
+
+.feature1image img {
+    max-width: 300px;
+    max-height: 250px;
+    margin: 10px;
+    margin-right: 15px;
+    border: solid #917e46 3px;
+}
+
+.feature1 ul {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.feature1 ul li button {
+    min-width: 160px;
+    min-height: 160px;
+    margin: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: #181717;
+}
+
+.feature1 .helpfulbuttons img {
+    margin-top: 3px;
+    min-width: 160px;
+    min-height: 160px;
+    max-width: 160px;
+    max-height: 160px;
+    border-radius: 5px;
+}
+
+.feature2 {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid black 5px;
+    margin-top: 100px;
+    background-color: #242424;
+    border-radius: 4px;
+    margin: 25px;
+}
+
+.topoffeature2 {
+    color: #917e46;
+    font-size: 30px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+.feature2image img {
+    max-width: 300px;
+    max-height: 250px;
+    margin: 10px;
+    margin-right: 15px;
+    color: black;
+    border: solid #917e46 3px;
+}
+
+.feature2 ul {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.feature2 ul li button {
+    min-width: 160px;
+    min-height: 160px;
+    margin: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: #181717;
+}
+
+.feature2 .helpfulbuttons img {
+    margin-top: 3px;
+    min-width: 160px;
+    min-height: 160px;
+    max-width: 160px;
+    max-height: 160px;
+    border-radius: 5px;
+}
+
+.socialcontainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.liveusercontainer {
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    margin: 25px;
+    width: 300px;
+    background-color: #917e46;
+}
+
+.title {
+    margin: 0;
+}
+
+.subtitle {
+    display: inline-block;
+    margin: 5px 0 20px;
+    opacity: 0.8;
+}
+
+.header {
+    background-color: #3e57db;
+    color: white;
+    padding: 30px 20px;
+}
+
+.header input {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 0;
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    /* all across its container */
+}
+
+.header input:focus {
+    outline: none;
+}
+
+.user-list {
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    /* sets overflow to y so a scroll bar appears. prevents overflow*/
+}
+
+.user-list li {
+    display: flex;
+    padding: 20px;
+}
+
+.user-list img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+}
+
+.user-list .user-info {
+    margin-left: 10px;
+}
+
+.user-list .user-info h4 {
+    margin: 0 0 10px;
+}
+
+.user-list .user-info p {
+    font-size: 12px;
+}
+
+.user-list li:not(:last-of-type) {
+    /*any item that is not the last li*/
+    border-bottom: 1px solid white;
+}
+
+.user-list li.hide {
+    display: none;
+}
+
+#slider {
+    overflow: hidden;
+    margin: 28px;
+    max-width: 400px;
+    max-height: 400px;
+
+}
+
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+
+#slider figure img {
+    float: left;
+    width: 20%;
+}
+
+@keyframes slider {
+
+    /*our first slide takes up 20% of the slider div*/
+    0% {
+        left: 0;
+    }
+
+    20% {
+        left: 0;
+    }
+
+    25% {
+        left: -100%;
+    }
+
+    45% {
+        left: -100%;
+    }
+
+    50% {
+        lefT: -200%;
+    }
+
+    70% {
+        left: -200%;
+    }
+
+    75% {
+        left: -300%
+    }
+
+    95% {
+        left: -300%;
+    }
+
+    100% {
+        left: -400%;
+    }
+}
+
+.newsTable {
+    background-color: #917e46;
+    border-radius: 5px;
+    margin: 25px;
+}
+
+.newsTable {
+    padding: 30px;
+}
+
+.newsTable td {
+    border-bottom: #222222 2px solid;
+}

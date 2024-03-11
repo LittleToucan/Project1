@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222222;
+}
+
+.overlay {
+    display: flex;
+    flex-flow: column;
+    background-color: rgb(23, 22, 22);
+    min-width: 400px;
+}
+
+/*.headsersummarycontainer {
+    display: flex;
+    flex-direction: row wrap;
+    margin: 40px;
+    border: solid black 2px
+
+    im not sure why it wouldn't flex around when the size changed 
+    but its likely just an updating error ¯\_(ツ)_/¯
+}*/
+.headersummarycontainer {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 60px;
+    border-radius: 4px;
+    margin: 25px;
+    background-color: #242424;
+}
+
+.leftimage1 {
+    margin-right: 80px;
+}
+
+.leftimage1 img {
+    max-width: 300px;
+    max-height: 300px;
+    float: left;
+    margin: 25px;
+    border: black solid 2px;
+}
+
+.textsection {
+    display: flex;
+    flex-flow: column;
+    color: #917e46;
+    font-family: "PT Sans", sans-serif;
+    border-top: black solid 2px;
+    border-bottom: black solid 2px;
+    min-width: 200px;
+    margin: 25px;
+    align-items: center;
+}
+
+.textsection header {
+    font-size: 30px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 500;
+    color: #917e46;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.textsection text {
+    font-size: 16px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 500;
+    color: #917e46;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.textsection text {
+    font-size: 16px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 500;
+    color: #917e46;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.textsection p {
+    font-size: 16px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 500;
+    color: #917e46;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.primary-container {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 25px;
+    border-radius: 4px;
+    background-color: #242424;
+}
+
+/*
+.primary-container {
+    display: flex;
+    flex-direction: row wrap; //wrong property dummy its flex-flow not flow direction
+    border: black solid 2px;
+    margin: 25px;
+}
+*/
+/*
+.stats-primary {
+    display: flex;
+    flex-flow: column;
+    border: black 5px solid;
+    margin-bottom: 60px;
+    border-radius: 4px;
+    margin: 25px;
+    background-color: #242424;
+    justify-content: center;
+    align-items: center;
+    //min width is missing which is why there is overflow
+}*/
+
+.stats-primary {
+    display: flex;
+    flex-flow: column;
+    color: #917e46;
+    font-family: "PT Sans", sans-serif;
+    border: black solid 2px;
+    min-width: 200px;
+    max-width: 300px;
+    justify-content: center;
+    margin: 25px;
+}
+
+.stats-primary ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: column;
+    color: #917e46;
+    font-family: "PT Sans", sans-serif;
+    min-width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats-primary ul li {
+    margin-left: -20px;
+}
+
+.guide-toggle-container {
+    display: flex;
+    align-items: center;
+    margin-left: -30px;
+    width: 200px;
+}
+
+.focusguidetoggle {
+    visibility: hidden;
+}
+
+.label {
+    position: relative;
+    background-color: grey;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 15px 0;
+    width: 80px;
+    height: 30px;
+}
+
+.focusguidetoggle:checked+.label {
+    background-color: #8e44ad;
+}
+
+.ball {
+    /*default slide is off*/
+    background: white;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    align-items: center;
+    justify-content: center;
+    animation: slideOff 0.3s linear forwards;
+}
+
+.focusguidetoggle:checked+.label .ball {
+    animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(25px) scale(1);
+    }
+}
+
+@keyframes slideOff {
+    0% {
+        transform: translateX(25px) scale(1);
+    }
+
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
+
+.primary-parts-container ul {
+    margin: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    color: #917e46;
+    font-family: "PT Sans", sans-serif;
+    justify-content: space-evenly;
+    align-content: center;
+    list-style-type: none;
+}
+
+.primary-parts-container ul button {
+    width: 150px;
+    height: 150px;
+    margin: 40px;
+    margin-left: 9px;
+    background-color: #242424;
+    border: black solid 2px;
+}
+
+.primary-parts-container ul img {
+    width: 145px;
+    height: 145px;
+    margin-left: -3px;
+
+}
